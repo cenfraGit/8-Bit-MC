@@ -1,0 +1,77 @@
+
+8-Bit CPU
+
+* Register Selection
+
+- 00 -> R0
+- 01 -> R1
+- 10 -> R2
+- 11 -> R3
+
+* ALU Instruction
+
+1-XXX-RA-RB
+
+** Operation Codes
+
+- 000 -> ADD (RA, RB)
+- 001 -> SHR (RA)
+- 010 -> SHL (RA)
+- 011 -> NOT (RA)
+- 100 -> AND (RA, RB)
+- 101 -> OR  (RA, RB)
+- 110 -> XOR (RA, RB)
+
+The results of each operation are saved in RB.
+
+* LOAD
+
+Load the value from memory pointed to by address in RA in RB.
+
+0-000-RA-RB
+
+* STORE
+
+Store the value of RB to memory address pointed to by RA.
+
+0-001-RA-RB
+
+* DATA (2 bytes)
+
+Load value from next memory address to RB.
+
+0-010-NA-RB
+
+* JUMP REGISTER
+
+Jump to address in RB. (Makes the IAR value the one from memory pointed to by RB).
+
+0-011-NA-RB
+
+* JUMP ADDRESS (2 bytes)
+
+Jump to the instruction pointed to by the next memory address.
+(The second byte should hold the address of another instruction).
+
+0-100-NA-NA
+
+* JUMP IF (2 bytes)
+
+Jump to the instruction pointed to by the next memory address if the flags are set.
+(The second byte should hold the address of another instruction).
+(Jump if any of the flags are ON).
+
+0-101-Z-E-A-C
+
+- C -> Carry
+- A -> A is greater
+- E -> Equal
+- Z -> Zero
+
+* CLEAR FLAGS
+
+Clear the flag register.
+
+0-110-NA-NA
+
+
