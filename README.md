@@ -7,4 +7,6 @@ Needs manual RAM instruction input for now. Use the [instruction reference file]
 - [Fibonacci](https://youtu.be/wNZBJHh3I1M) example
 - [Printing](https://youtu.be/bURuTpVvGPY) example
 
+Based on the book "But How Do It Know?" by J. Clark Scott. 
+
 ![](images/Untitled.png)
